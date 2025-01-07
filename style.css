@@ -21,7 +21,7 @@ body {
   height: 100vh;
   font-size: 2rem;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
   padding: 20px; /* Add some padding */
 }
 
