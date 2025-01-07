@@ -12,6 +12,6 @@ const interval = setInterval(() => {
   // Redirect when countdown reaches 0
   if (countDown === 0) {
     clearInterval(interval);
-    window.location.href = "https://dicastal.com"; // Replace with the actual parent company URL
+    window.location.href = "https://www.dicastal.com/en/"; // Replace with the actual parent company URL
   }
 }, 1000);
