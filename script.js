@@ -1,17 +1,8 @@
-// Set the initial countdown value
-let countDown = 5;
+function redirectAfterDelay() {
+  setTimeout(() => {
+    window.location.href = "https://www.dicastal.com/en"; // Replace with your target URL
+  }, 2000); // 2 seconds delay
+}
 
-// Get the countdown span element
-const countdownElement = document.getElementById("countdown");
-
-// Update the countdown every second
-const interval = setInterval(() => {
-  countDown--;
-  countdownElement.textContent = countDown;
-
-  // Redirect when countdown reaches 0
-  if (countDown === 0) {
-    clearInterval(interval);
-    window.location.href = "https://www.dicastal.com/en/"; // Replace with the actual parent company URL
-  }
-}, 1000);
+// Start the redirection once the page is loaded
+document.addEventListener("DOMContentLoaded", redirectAfterDelay);

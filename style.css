@@ -1,18 +1,52 @@
-/* Style for the body */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-  }
+  background-image: url('resources/images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+#loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  color: #eee;
+  background-color: rgba(0, 0, 0, 0.35); /* Semi-transparent background */
+  padding: 20px; /* Add some padding */
   
-  /* Style for the redirect message */
-  .redirect-message {
-    font-size: 1.5rem;
-    color: #333;
-    text-align: center;
-  }
-  
+}
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-color: #eee #0000;
+  animation: l16 1.2s infinite linear;
+}
+.loader::before,
+.loader::after {    
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+}
+.loader::before {
+  border-color: #f03355 #0000;
+  animation: inherit; 
+  animation-duration: .6s;
+  animation-direction: reverse;
+}
+.loader::after {
+  margin: 8px;
+}
+@keyframes l16 { 
+  100%{transform: rotate(1turn)}
+}
