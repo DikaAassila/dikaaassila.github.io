@@ -35,17 +35,17 @@ body {
   left:0px;
 }
 #card1 {
-  background-image:url(../images/Image1.jpg);
+  background-image:url(../images/card1.jpg);
   background-size:cover;
 }
 #card2 {
   margin-left:50px;
-  background-image:url(../images/Image2.jpg);
+  background-image:url(../images/card2.jpg);
   background-size:cover;
 }
 #card3 {
   margin-left:50px;
-  background-image:url(../images/Image3.jpg);
+  background-image:url(../images/card3.jpg);
   background-size:cover;
 }
 
@@ -115,28 +115,22 @@ body {
   cursor:pointer;
   top:20px;
   right:20px;
+  filter: drop-shadow(0 0 5px red);
 }
 
-.leftright{
-  height:4px;
-  width:50px;
-  position:absolute;
-  margin-top:24px;
-  background-color:black;
-  border-radius:2px;
-  transform:rotate(45deg);
-  transition:all .3s ease-in;
+.leftright, .rightleft {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: black;
+  border-radius: 2px;
+  transform: rotate(45deg); /* Default transform */
+  transition: transform 0.3s ease-in, background-color 0.3s ease-in; /* Smooth transition */
 }
 
 .rightleft{
-  height:4px;
-  width:50px;
-  position:absolute;
-  margin-top:24px;
-  background-color:black;
-  border-radius:2px;
   transform:rotate(-45deg);
-  transition:all .3s ease-in;
 }
 
 label{
@@ -149,18 +143,62 @@ label{
   transition:all .3s ease-in;
   opacity:0;
 }
+
 .close{
   margin:60px 0 0 5px;
   position:absolute;
 }
+@keyframes triggerEffectLeft {
+  0%, 80% {
+    transform: rotate(45deg);
+    background-color: black;
+  }
+  90% {
+    transform: rotate(-45deg);
+    background-color: red;
+  }
+  100% {
+    transform: rotate(45deg);
+    background-color: black;
+  }
+}
 
+@keyframes triggerEffectRight {
+  0%, 80% {
+    transform: rotate(-45deg);
+    background-color: black;
+  }
+  90% {
+    transform: rotate(45deg);
+    background-color: red;
+  }
+  100% {
+    transform: rotate(-45deg);
+    background-color: black;
+  }
+}
+
+.close-container .leftright {
+  animation: triggerEffectLeft 10s infinite;
+}
+
+.close-container .rightleft {
+  animation: triggerEffectRight 10s infinite;
+}
+/* Pause animation on hover */
+.close-container:hover .leftright,
+.close-container:hover .rightleft {
+  animation: none;
+  background-color:red;
+}
+.close-container:hover {
+  filter: drop-shadow(0 0 5px black);
+}
 .close-container:hover .leftright{
   transform:rotate(-45deg);
-  background-color:red;
 }
 .close-container:hover .rightleft{
   transform:rotate(45deg);
-  background-color:red;
 }
 .close-container:hover label{
   opacity:1;

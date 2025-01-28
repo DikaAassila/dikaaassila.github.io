@@ -14,17 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // handle click
   if(card1) {
     card1.addEventListener("click", () => {
-      window.location.href = "./article1.html";
+      window.location.href = "./card1.html";
     });
   }
   if(card2) {
     card2.addEventListener("click", () => {
-      window.location.href = "./article2.html";
+      window.location.href = "./card2.html";
     });
   }
   if(card3) {
     card3.addEventListener("click", () => {
-      window.location.href = "./article3.html";
+      window.location.href = "./card3.html";
     });
   }
 
